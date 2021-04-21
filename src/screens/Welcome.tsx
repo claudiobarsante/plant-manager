@@ -1,12 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet,Dimensions } from 'react-native';
 import wateringImg from '../assets/watering.png';
 import colors from '../colors';
 export default function Welcome() {
 	return (
 		<SafeAreaView style={styles.container}>
 			<Text style={styles.title}>Manage {'\n'}your plants easily</Text>
-			<Image source={wateringImg} style={styles.image} />
+			<Image source={wateringImg} style={styles.image} resizeMode='contain' />
 
 			<Text style={styles.subtitle}>
 				Don't forget to water your plants anymore. We take care to remind you whenever you need
@@ -21,13 +21,11 @@ export default function Welcome() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'space-between',
+		justifyContent: 'space-around',
 		alignItems: 'center',
 	},
-    image:{
-        width:292,
-        height:284
-
+    image:{        
+        height:Dimensions.get('window').width*0.7
     },
 	button: {
 		backgroundColor: colors.green,
