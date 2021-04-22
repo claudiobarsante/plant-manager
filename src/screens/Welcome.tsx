@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 		fontSize: 32,
 	},
 	title: {
-		fontSize: 28,
+		fontSize: Dimensions.get('window').width > 375 ? 28 : 20,
 		fontWeight: 'bold',
 		textAlign: 'center',
 		color: colors.heading,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 	},
 	subtitle: {
 		textAlign: 'center',
-		fontSize: 18,
+		fontSize: Dimensions.get('window').width > 375 ? 18 : 14,
 		paddingHorizontal: 20,
 		color: colors.heading,
 		fontFamily: fonts.text,
