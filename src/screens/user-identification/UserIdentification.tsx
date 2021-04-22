@@ -8,6 +8,7 @@ import {
 	KeyboardAvoidingView,
 	Platform,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import Button from '../../components/button/Button';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
@@ -16,6 +17,7 @@ export default function UserIdentification() {
 	const [isFocused, setIsFocused] = useState(false);
 	const [isFilled, setIsFilled] = useState(false);
 	const [name, setName] = useState<string>();
+	const navigation = useNavigation();
 
 	const handleInputBlur = () => {
 		setIsFocused(false);
@@ -30,6 +32,10 @@ export default function UserIdentification() {
 		setName(value);
 	};
 
+	const handleSubmit = () => {
+		navigation.navigate('Confirmation');
+	};
+	console.log('name ', name);
 	return (
 		<SafeAreaView style={styles.container}>
 			<KeyboardAvoidingView
@@ -48,10 +54,9 @@ export default function UserIdentification() {
 							onFocus={handleInputFocus}
 							onBlur={handleInputBlur}
 							onChangeText={handleInputChange}
-							value={name}
 						></TextInput>
 						<View style={styles.footer}>
-							<Button />
+							<Button text='Confirm' onPress={handleSubmit} />
 						</View>
 					</View>
 				</View>

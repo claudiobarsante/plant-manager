@@ -12,7 +12,13 @@ import { Feather } from '@expo/vector-icons';
 import wateringImg from '../../assets/watering.png';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
 export default function Welcome() {
+	const navigation = useNavigation();
+
+	const handleStart = () => {
+		navigation.navigate('UserIdentification');
+	};
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.wrapper}>
@@ -22,7 +28,7 @@ export default function Welcome() {
 				<Text style={styles.subtitle}>
 					Don't forget to water your plants anymore. We take care to remind you whenever you need
 				</Text>
-				<TouchableOpacity style={styles.button} activeOpacity={0.7}>
+				<TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={handleStart}>
 					<Text>
 						<Feather name='chevron-right' style={styles.buttonIcon} />
 					</Text>
