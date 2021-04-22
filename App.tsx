@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import AppLoading from 'expo-app-loading';
-import Welcome from './src/screens/Welcome';
+import Welcome from './src/screens/welcome/Welcome';
+import UserIdentification from './src/screens/user-identification/UserIdentification';
 import { useFonts, Jost_400Regular, Jost_600SemiBold } from '@expo-google-fonts/jost';
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
 	return (
 		<>
 			<StatusBar />
-			<Welcome />
+			<UserIdentification />
 		</>
 	);
 }
